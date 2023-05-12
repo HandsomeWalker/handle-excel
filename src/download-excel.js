@@ -28,6 +28,15 @@ const crawler = new Crawler({
   },
 });
 
+// 检测是否有sheets文件夹
+function checkSheetsDir() {
+  const p = resolve(__dirname, '../sheets');
+  const has = fs.existsSync(p);
+  if (!has) {
+    fs.mkdirSync(p);
+  }
+}
+
 function request(config) {
   return new Promise((resolve) => {
     crawler.queue({
@@ -50,6 +59,7 @@ function request(config) {
 
 export default async function crawl(timeReg) {
   console.log(`开始爬取${timeReg}数据`);
+  checkSheetsDir();
   let rules = downloadRule;
   // 测试
   // rules = downloadRule.filter((item) => item.province === "深圳市");
