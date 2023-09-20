@@ -22,6 +22,8 @@ yarn walkExcel # 处理excel
 * 湖北省 - 非静态html
 * 江西省 - CDATA
 * 江苏省 - CDATA
+* 云南省 - 无法爬取
+* 天津市 - 非静态html
 * 深圳市 - 下载文件太大
 
 ## 不批量处理

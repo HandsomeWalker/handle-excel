@@ -62,7 +62,7 @@ export default async function crawl(timeReg) {
   checkSheetsDir();
   let rules = downloadRule;
   // 测试
-  // rules = downloadRule.filter((item) => item.province === "深圳市");
+  // rules = downloadRule.filter((item) => item.province === "云南省");
   for (const item of rules) {
     const handle = item?.handle;
     if (!handle) {

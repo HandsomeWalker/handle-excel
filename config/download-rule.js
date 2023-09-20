@@ -210,7 +210,15 @@ export default [
       titleReg: /抽检不合格情况的通告/,
     },
   },
-  { province: "云南省", url: "http://amr.yn.gov.cn/gsgg1/gg.htm" },
+  {
+    province: "云南省",
+    url: "http://amr.yn.gov.cn/gsgg1/gg.htm",
+    // handle: {
+    //   liEl: (res) => res.$("ul.news-list>li"),
+    //   title: (res, el) => res.$(el).children("a").attr("title"),
+    //   titleReg: /食品安全监督抽检信息通告/,
+    // },
+  },
   {
     province: "北京市",
     url: "http://scjgj.beijing.gov.cn/zwxx/gs/spzlgs/",
