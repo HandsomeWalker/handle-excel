@@ -30,7 +30,7 @@ const crawler = new Crawler({
 
 // 检测是否有sheets文件夹
 function checkSheetsDir() {
-  const p = resolve(__dirname, '../sheets');
+  const p = resolve(__dirname, "../sheets");
   const has = fs.existsSync(p);
   if (!has) {
     fs.mkdirSync(p);
@@ -47,7 +47,7 @@ function request(config) {
         if (err) {
           failProvinces.push({ province: config.province, err });
           done();
-          resolve();
+          resolve(null);
         } else {
           resolve(res);
           done();
@@ -57,7 +57,8 @@ function request(config) {
   });
 }
 
-export default async function crawl(timeReg) {
+export default async function crawl(time) {
+  const timeReg = new RegExp(time);
   console.log(`开始爬取${timeReg}数据`);
   checkSheetsDir();
   let rules = downloadRule;
